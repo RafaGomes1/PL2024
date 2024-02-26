@@ -19,10 +19,8 @@ def converte(texto):
     texto = re.sub(r"!\[(.*)\]\((.*)\)", r'<img src="\2" alt="\1">', texto, flags=re.MULTILINE)
 
 
-
-
-
-
+    # Listas Numeradas
+    texto = re.sub(r'(\<li\>.+\<\/li\>(?:(?:\n).+$)*)', r'<ol>\n\1\n</ol>', texto, flags=re.MULTILINE)
 
     return texto
     
